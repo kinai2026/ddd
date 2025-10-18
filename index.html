@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 音樂生成器 · 3 分鐘</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>AI 音樂生成器</h1>
+      <p class="subtitle">自動生成 3 分鐘音樂，支援多種曲風</p>
+    </header>
+
+    <section class="controls">
+      <div class="field">
+        <label for="genre">曲風</label>
+        <select id="genre">
+          <option value="edm">EDM / 電子舞曲</option>
+          <option value="lofi">Lo-Fi / 輕鬆節奏</option>
+          <option value="ambient">Ambient / 氣氛</option>
+          <option value="classical">Classical / 古典</option>
+          <option value="hiphop">Hip-Hop / 節奏藍調</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="seed">隨機種子 (可選)</label>
+        <input id="seed" type="text" placeholder="例如：my-song-2025" />
+      </div>
+
+      <div class="field inline">
+        <label for="duration">長度</label>
+        <input id="duration" type="number" min="30" max="600" value="180" />
+        <span class="unit">秒</span>
+      </div>
+
+      <div class="buttons">
+        <button id="startBtn" class="primary">開始生成 (3 分鐘)</button>
+        <button id="stopBtn" class="ghost" disabled>停止</button>
+        <button id="downloadBtn" class="secondary" disabled>下載音檔</button>
+      </div>
+    </section>
+
+    <section class="status">
+      <div class="progress">
+        <div class="bar" id="progressBar" style="width: 0%"></div>
+      </div>
+      <div class="info">
+        <span id="statusText">待命中</span>
+        <span id="timeText">00:00 / 03:00</span>
+      </div>
+    </section>
+
+    <footer>
+      <p>提示：使用瀏覽器播放與錄音。點擊「開始生成」後將即時合成音樂並自動錄製，完成後可下載檔案。</p>
+    </footer>
+  </div>
+
+  <script src="./src/app.js"></script>
+</body>
+</html>

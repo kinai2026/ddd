@@ -1,0 +1,34 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: 'Noto Sans TC', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; color: #101828; background: #0b1020; }
+
+.app { max-width: 880px; margin: 0 auto; padding: 32px 20px 48px; }
+header { text-align: center; margin-bottom: 24px; }
+header h1 { color: #F5F7FB; margin: 0 0 8px; font-size: 28px; letter-spacing: 0.5px; }
+.subtitle { color: #B8C1D9; margin: 0; }
+
+.controls { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field.inline { flex-direction: row; align-items: center; gap: 8px; }
+label { color: #E5EDFF; font-size: 13px; }
+select, input[type="text"], input[type="number"] { background: #0f152b; color: #E8EEFF; border: 1px solid #233056; border-radius: 10px; padding: 10px 12px; outline: none; transition: border 0.2s ease; }
+select:focus, input:focus { border-color: #6BA6FF; }
+.unit { color: #98A2B3; font-size: 14px; }
+
+.buttons { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+button { cursor: pointer; user-select: none; padding: 10px 14px; border-radius: 10px; border: 1px solid transparent; font-weight: 600; letter-spacing: 0.2px; }
+button.primary { background: linear-gradient(135deg, #3B82F6, #22D3EE); color: #041024; }
+button.secondary { background: #121a35; color: #EAF2FF; border-color: #273659; }
+button.ghost { background: transparent; color: #C3CDDF; border-color: #273659; }
+button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.status { margin-top: 20px; }
+.progress { height: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; }
+.bar { height: 100%; background: linear-gradient(90deg, #22C55E, #84CC16, #F59E0B); width: 0%; transition: width 0.2s ease; }
+.info { display: flex; justify-content: space-between; color: #C8D4F0; font-size: 14px; margin-top: 8px; }
+footer { color: #9FB1D5; text-align: center; margin-top: 28px; font-size: 13px; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  header h1 { font-size: 22px; }
+  .controls { grid-template-columns: 1fr; }
+}

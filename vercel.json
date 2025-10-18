@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "framework": "nextjs",
+  "functions": {
+    "api/**/*": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 300
+    },
+    "app/**/route.js": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 300
+    },
+    "app/**/route.ts": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 300
+    }
+  }
+}
